@@ -2,7 +2,7 @@
 
 Site temático e responsivo sobre o anime *Attack on Titan*, criado como projeto de estudo de desenvolvimento front-end.
 
-🔗 **Acesse o site:** _(link do GitHub Pages)_
+🔗 **Acesse o site:** https://pedrinph1.github.io/attack-on-titan/
 
 ## Funcionalidades
 
