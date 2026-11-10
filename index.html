@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fan site de estudo sobre Attack on Titan: história, personagens, titãs e temporadas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Caminhos relativos (sem a barra no começo): funcionam abrindo o arquivo direto e no GitHub Pages -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Attack on Titan | Fan Site</title>
+</head>
+<body>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="cabecalho">
+        <a href="#inicio" class="marca">
+            <img id="logo1" src="imagens/logo1.png" alt="Logo da Tropa de Exploração">
+            <span class="marca-texto">
+                <span class="marca-nome">ATTACK ON TITAN</span>
+                <span class="marca-japones">進撃の巨人</span>
+            </span>
+        </a>
+
+        <!-- Botão que aparece só no celular para abrir o menu -->
+        <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="navegacao" id="menu">
+            <a href="#inicio" class="ativo">Início</a>
+            <a href="#historia">História</a>
+            <a href="#personagens">Personagens</a>
+            <a href="#titas">Titãs</a>
+            <a href="#temporadas">Temporadas</a>
+            <a href="#galeria">Galeria</a>
+        </nav>
+
+        <!-- Busca de personagens -->
+        <div class="busca">
+            <input type="search" id="campo-busca" placeholder="Buscar personagem..." aria-label="Buscar personagem">
+            <button class="botao-busca" aria-label="Abrir busca">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== BANNER PRINCIPAL ===== -->
+        <section class="banner" id="inicio">
+            <div class="banner-conteudo">
+                <span class="sobretitulo">ATTACK ON TITAN</span>
+                <h1 class="titulo">A HUMANIDADE <br> <strong>NÃO</strong> SE CURVARÁ</h1>
+                <p class="paragrafo">ENTRE A LIBERDADE E A EXTINÇÃO,<br> NÓS ESCOLHEMOS LUTAR.</p>
+                <a href="#historia" class="botao-principal">EXPLORAR O MUNDO <span aria-hidden="true">→</span></a>
+            </div>
+
+            <div class="caixa">
+                <h2>845</h2>
+                <div>
+                    <span class="caixa3">A QUEDA DA MURALHA MARIA</span>
+                    <p class="caixa4">O início de tudo.</p>
+                </div>
+            </div>
+
+            <a href="#historia" class="role-para-baixo">ROLE PARA BAIXO <span aria-hidden="true">⌄</span></a>
+        </section>
+
+        <!-- ===== EXPLORE O UNIVERSO ===== -->
+        <section class="secao" id="historia">
+            <div class="titulo-secao">
+                <span class="titulo-secao-pequeno">EXPLORE O UNIVERSO DE</span>
+                <h2>ATTACK ON TITAN</h2>
+            </div>
+
+            <div class="grade-universo">
+                <article class="card-universo" style="--imagem: url('../imagens/card_historia.jpg')">
+                    <div class="card-universo-texto">
+                        <span class="icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z M12 6v14" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </span>
+                        <h3>HISTÓRIA</h3>
+                        <p>Descubra os acontecimentos que moldaram a humanidade e o verdadeiro significado da liberdade.</p>
+                        <button class="ver-mais" data-alvo="detalhe-historia">VER MAIS <span aria-hidden="true">→</span></button>
+                        <div class="detalhe" id="detalhe-historia" hidden>
+                            <p>Há mais de cem anos, a humanidade vive cercada por três enormes muralhas: Maria, Rose e Sina. No ano 845, um Titã Colossal abre um buraco na Muralha Maria e os titãs invadem o distrito de Shiganshina. É ali que começa a jornada de Eren, Mikasa e Armin.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-universo" style="--imagem: url('../imagens/card_personagens.jpg')">
+                    <div class="card-universo-texto">
+                        <span class="icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </span>
+                        <h3>PERSONAGENS</h3>
+                        <p>Conheça os guerreiros, sonhadores e soldados que lutaram até o fim por um mundo melhor.</p>
+                        <a href="#personagens" class="ver-mais">VER MAIS <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+
+                <article class="card-universo" style="--imagem: url('../imagens/card_titas.jpg')">
+                    <div class="card-universo-texto">
+                        <span class="icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M6 10a6 6 0 0 1 12 0v4l-2 2v3H8v-3l-2-2z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9.5" cy="11" r="1.3" fill="currentColor"/><circle cx="14.5" cy="11" r="1.3" fill="currentColor"/></svg>
+                        </span>
+                        <h3>TITÃS</h3>
+                        <p>Conheça os nove titãs e entenda o poder que pode decidir o destino da humanidade.</p>
+                        <a href="#titas" class="ver-mais">VER MAIS <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== PERSONAGENS PRINCIPAIS ===== -->
+        <section class="secao" id="personagens">
+            <div class="titulo-secao">
+                <h2>PERSONAGENS PRINCIPAIS</h2>
+            </div>
+
+            <!-- Os dados de cada personagem ficam nos atributos data-*; o JavaScript lê e mostra na janela -->
+            <!-- Obs.: o caminho ../imagens/ é relativo à pasta css, porque a variável --imagem é usada dentro do style.css -->
+            <div class="grade-personagens">
+                <button class="card-personagem" style="--imagem: url('../imagens/eren.jpg')"
+                    data-nome="Eren Yeager" data-papel="Titã de Ataque"
+                    data-descricao="Nascido em Shiganshina, Eren jurou eliminar todos os titãs depois de ver sua cidade ser destruída. Descobre que pode se transformar em titã e se torna o herdeiro do Titã de Ataque.">
+                    <span class="card-personagem-texto">
+                        <span class="nome">EREN YEAGER</span>
+                        <span class="papel">TITÃ DE ATAQUE</span>
+                    </span>
+                    <span class="seta" aria-hidden="true">→</span>
+                </button>
+
+                <button class="card-personagem" style="--imagem: url('../imagens/mikasa.jpg')"
+                    data-nome="Mikasa Ackerman" data-papel="Soldado"
+                    data-descricao="Amiga de infância de Eren, Mikasa é considerada uma das soldados mais habilidosas da Tropa de Exploração. Leal e determinada, está sempre pronta para proteger quem ama.">
+                    <span class="card-personagem-texto">
+                        <span class="nome">MIKASA ACKERMAN</span>
+                        <span class="papel">SOLDADO</span>
+                    </span>
+                    <span class="seta" aria-hidden="true">→</span>
+                </button>
+
+                <button class="card-personagem" style="--imagem: url('../imagens/armin.jpg')"
+                    data-nome="Armin Arlert" data-papel="Estrategista"
+                    data-descricao="Amigo de Eren e Mikasa, Armin compensa a falta de força física com inteligência. Seus planos mudam o rumo de várias batalhas, e ele se torna o herdeiro do Titã Colossal.">
+                    <span class="card-personagem-texto">
+                        <span class="nome">ARMIN ARLERT</span>
+                        <span class="papel">ESTRATEGISTA</span>
+                    </span>
+                    <span class="seta" aria-hidden="true">→</span>
+                </button>
+
+                <button class="card-personagem" style="--imagem: url('../imagens/levi.jpg')"
+                    data-nome="Levi Ackerman" data-papel="Capitão"
+                    data-descricao="Capitão da Tropa de Exploração, Levi é conhecido como o soldado mais forte da humanidade. Sério e exigente, é extremamente leal aos seus companheiros.">
+                    <span class="card-personagem-texto">
+                        <span class="nome">LEVI ACKERMAN</span>
+                        <span class="papel">CAPITÃO</span>
+                    </span>
+                    <span class="seta" aria-hidden="true">→</span>
+                </button>
+            </div>
+            <p class="sem-resultado" hidden>Nenhum personagem encontrado.</p>
+        </section>
+
+        <!-- ===== TITÃS ===== -->
+        <section class="secao" id="titas">
+            <div class="titulo-secao">
+                <span class="titulo-secao-pequeno">O PODER QUE DECIDE O DESTINO</span>
+                <h2>OS NOVE TITÃS</h2>
+            </div>
+            <div class="destaque-titas">
+                <figure class="card-tita" style="--imagem: url('../imagens/colossal.jpg')">
+                    <figcaption><span>TITÃ</span>COLOSSAL</figcaption>
+                </figure>
+                <figure class="card-tita" style="--imagem: url('../imagens/encouracado.jpg')">
+                    <figcaption><span>TITÃ</span>ENCOURAÇADO</figcaption>
+                </figure>
+                <figure class="card-tita" style="--imagem: url('../imagens/femea.jpg')">
+                    <figcaption><span>TITÃ</span>FÊMEA</figcaption>
+                </figure>
+            </div>
+
+            <ul class="lista-titas">
+                <li><strong>Fundador</strong><span>Controla os outros titãs e a memória do povo de Ymir.</span></li>
+                <li><strong>Ataque</strong><span>Sempre segue em frente em busca da liberdade.</span></li>
+                <li><strong>Colossal</strong><span>Gigantesco, libera uma explosão de vapor e calor.</span></li>
+                <li><strong>Encouraçado</strong><span>Coberto por uma armadura quase impenetrável.</span></li>
+                <li><strong>Fêmea</strong><span>Ágil e capaz de endurecer partes do corpo.</span></li>
+                <li><strong>Bestial</strong><span>Força enorme e arremessos precisos.</span></li>
+                <li><strong>Mandíbula</strong><span>Pequeno, rápido e com mordida poderosa.</span></li>
+                <li><strong>Carroceiro</strong><span>Resistente, aguenta longas missões.</span></li>
+                <li><strong>Martelo de Guerra</strong><span>Cria armas e estruturas endurecidas.</span></li>
+            </ul>
+        </section>
+
+        <!-- ===== TEMPORADAS ===== -->
+        <section class="secao" id="temporadas">
+            <div class="titulo-secao">
+                <h2>TEMPORADAS</h2>
+            </div>
+            <ol class="linha-do-tempo">
+                <li><span class="ano">2013</span><h3>Temporada 1</h3><p>A queda da Muralha Maria e o início da luta contra os titãs.</p></li>
+                <li><span class="ano">2017</span><h3>Temporada 2</h3><p>Novos inimigos surgem e segredos começam a ser revelados.</p></li>
+                <li><span class="ano">2018–2019</span><h3>Temporada 3</h3><p>A verdade sobre o mundo além das muralhas.</p></li>
+                <li><span class="ano">2020–2023</span><h3>Temporada Final</h3><p>O conflito que decide o destino de toda a humanidade.</p></li>
+            </ol>
+        </section>
+
+        <!-- ===== GALERIA ===== -->
+        <section class="secao" id="galeria">
+            <div class="titulo-secao">
+                <h2>GALERIA</h2>
+            </div>
+            <div class="grade-galeria">
+                <img src="imagens/muralha1.jpeg" alt="Titãs atrás da muralha" loading="lazy">
+                <img src="imagens/colossal.jpg" alt="Titã Colossal" loading="lazy">
+                <img src="imagens/encouracado.jpg" alt="Titã Encouraçado" loading="lazy">
+                <img src="imagens/femea.jpg" alt="Titã Fêmea" loading="lazy">
+                <img src="imagens/eren.jpg" alt="Eren Yeager" loading="lazy">
+                <img src="imagens/mikasa.jpg" alt="Mikasa Ackerman" loading="lazy">
+                <img src="imagens/armin.jpg" alt="Armin Arlert" loading="lazy">
+                <img src="imagens/levi.jpg" alt="Levi Ackerman" loading="lazy">
+                <img src="imagens/card_historia.jpg" alt="Titãs colossais diante das muralhas" loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div class="rodape-topo">
+            <a href="#inicio" class="marca">
+                <img class="logo-rodape" src="imagens/logo1.png" alt="">
+                <span class="marca-texto">
+                    <span class="marca-nome">ATTACK ON TITAN</span>
+                    <span class="marca-japones">進撃の巨人</span>
+                </span>
+            </a>
+            <nav class="rodape-links">
+                <a href="#inicio">Início</a>
+                <a href="#historia">História</a>
+                <a href="#personagens">Personagens</a>
+                <a href="#titas">Titãs</a>
+                <a href="#temporadas">Temporadas</a>
+                <a href="#galeria">Galeria</a>
+            </nav>
+            <blockquote class="citacao">
+                “Ofereçam seus corações!”
+                <cite>— Erwin Smith</cite>
+            </blockquote>
+        </div>
+        <p class="direitos">© 2026 Attack on Titan Fan Site. Projeto de estudo, sem fins comerciais. Attack on Titan pertence a Hajime Isayama e Kodansha.</p>
+    </footer>
+
+    <!-- ===== JANELA DE DETALHES DO PERSONAGEM ===== -->
+    <dialog class="janela" id="janela-personagem">
+        <button class="fechar" aria-label="Fechar">×</button>
+        <div class="janela-imagem"></div>
+        <div class="janela-texto">
+            <span class="janela-papel"></span>
+            <h3 class="janela-nome"></h3>
+            <p class="janela-descricao"></p>
+        </div>
+    </dialog>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

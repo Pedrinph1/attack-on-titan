@@ -1,0 +1,723 @@
+/* =========================================================
+   ATTACK ON TITAN - FAN SITE
+   Cores e medidas ficam em variáveis para facilitar mudanças
+   ========================================================= */
+:root {
+    --preto: #080A0B;
+    --fundo: #0E1113;
+    --fundo-card: #14181B;
+    --creme: #E8E1D2;
+    --cinza: #A8A39A;
+    --vermelho: #B52A2A;
+    --vermelho-escuro: #8B1E1E;
+    --sombra-texto: 2px 2px 0 rgb(41, 9, 12);
+    --borda: rgba(232, 225, 210, 0.18);
+    --fonte-titulo: 'Oswald', sans-serif;
+    --fonte-texto: 'Rajdhani', sans-serif;
+    --altura-cabecalho: 76px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--altura-cabecalho); }
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--fundo);
+    /* Fundo das seções abaixo do banner. "fixed" faz a imagem ficar parada enquanto o conteúdo rola */
+    background-image:
+        linear-gradient(rgba(8, 10, 11, 0.35), rgba(8, 10, 11, 0.35)),
+        url(../imagens/fundo_secoes.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--creme);
+    margin: 0;
+    line-height: 1.5;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--altura-cabecalho);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 5%;
+    background-color: rgba(8, 10, 11, 0.95);
+    border-bottom: 2px solid var(--vermelho-escuro);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+}
+
+#logo1 {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    overflow: hidden; /* se a imagem faltar, o texto alternativo não vaza */
+    font-size: 0;
+    filter: drop-shadow(4px 4px 0px rgb(41, 9, 12));
+}
+
+.marca-texto { display: flex; flex-direction: column; line-height: 1.2; }
+.marca-nome { font-size: 16px; letter-spacing: 4px; font-weight: 600; }
+.marca-japones { font-size: 13px; letter-spacing: 4px; color: var(--cinza); }
+
+.navegacao {
+    display: flex;
+    gap: 36px;
+}
+
+.navegacao a {
+    position: relative;
+    text-decoration: none;
+    color: var(--creme);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+/* Linha vermelha embaixo do link (aparece no hover e no item ativo) */
+.navegacao a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--vermelho);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navegacao a:hover,
+.navegacao a.ativo { color: #fff; }
+
+.navegacao a:hover::after,
+.navegacao a.ativo::after { transform: scaleX(1); }
+
+/* Busca */
+.busca { display: flex; align-items: center; gap: 8px; }
+
+.busca input {
+    width: 0;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: var(--creme);
+    font-family: var(--fonte-texto);
+    font-size: 15px;
+    transition: width 0.3s ease, border-color 0.3s ease;
+}
+
+.busca.aberta input {
+    width: 180px;
+    border-bottom-color: var(--vermelho);
+    outline: none;
+}
+
+.botao-busca,
+.botao-menu {
+    background: none;
+    border: none;
+    color: var(--creme);
+    cursor: pointer;
+    padding: 6px;
+}
+
+.botao-busca:hover { color: var(--vermelho); }
+
+.botao-menu { display: none; }
+
+/* ===== BANNER ===== */
+.banner {
+    position: relative;
+    min-height: calc(100vh - var(--altura-cabecalho));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 6% 140px;
+    /* Se a imagem não carregar, o degradê vermelho escuro aparece no lugar */
+    background-color: #2a0d0d;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.1) 100%),
+        linear-gradient(to top, var(--fundo) 0%, transparent 30%),
+        url(../imagens/muralha1.jpeg),
+        radial-gradient(ellipse at 75% 40%, #6b1d1d 0%, #1a0a0a 70%);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--borda);
+}
+
+.banner-conteudo { max-width: 620px; }
+
+.sobretitulo {
+    font-size: 18px;
+    letter-spacing: 8px;
+    color: var(--creme);
+}
+
+.titulo {
+    font-family: var(--fonte-titulo);
+    text-shadow: var(--sombra-texto);
+    margin: 12px 0 20px;
+    font-size: clamp(42px, 6.5vw, 82px);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--creme);
+}
+
+strong { color: var(--vermelho); }
+
+.paragrafo {
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin: 0 0 32px;
+    filter: drop-shadow(2px 2px 0px rgb(41, 9, 12));
+}
+
+.botao-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--creme);
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 14px 36px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--vermelho);
+    text-shadow: var(--sombra-texto);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao-principal:hover {
+    background-color: var(--vermelho-escuro);
+    transform: translateY(-3px);
+}
+
+.caixa {
+    position: absolute;
+    left: 6%;
+    bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding-left: 18px;
+    border-left: 2px solid var(--vermelho);
+}
+
+.caixa h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 40px;
+    margin: 0;
+}
+
+.caixa3 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.caixa4 { margin: 0; color: var(--cinza); }
+
+.role-para-baixo {
+    position: absolute;
+    right: 6%;
+    bottom: 56px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--cinza);
+}
+
+.role-para-baixo:hover { color: var(--creme); }
+
+/* ===== SEÇÕES ===== */
+.secao {
+    padding: 80px 6%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 44px;
+}
+
+.titulo-secao-pequeno {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: var(--cinza);
+    margin-bottom: 6px;
+}
+
+/* Título com uma linha de cada lado */
+.titulo-secao h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    font-size: clamp(24px, 3.5vw, 40px);
+    letter-spacing: 6px;
+}
+
+.titulo-secao h2::before,
+.titulo-secao h2::after {
+    content: '';
+    width: 80px;
+    height: 1px;
+    background-color: var(--cinza);
+}
+
+/* ===== CARDS DO UNIVERSO ===== */
+.grade-universo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.card-universo {
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid var(--borda);
+    background-color: var(--fundo-card);
+    background-image:
+        linear-gradient(to top, rgba(8, 10, 11, 0.98) 30%, rgba(8, 10, 11, 0.2) 75%),
+        var(--imagem),
+        linear-gradient(160deg, #3a1515, var(--fundo-card));
+    background-size: cover;
+    background-position: center top;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-universo:hover {
+    transform: translateY(-6px);
+    border-color: var(--vermelho);
+}
+
+.card-universo-texto {
+    padding: 28px;
+    border-left: 2px solid var(--vermelho-escuro);
+    margin: 0 0 24px 20px;
+    padding-top: 0;
+}
+
+.icone {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid var(--vermelho);
+    border-radius: 50%;
+    color: var(--vermelho);
+    margin-bottom: 10px;
+}
+
+.icone svg { width: 100%; height: 100%; }
+
+.card-universo h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin: 0 0 8px;
+}
+
+.card-universo p {
+    margin: 0 0 16px;
+    color: var(--cinza);
+    font-size: 16px;
+}
+
+.ver-mais {
+    display: inline-flex;
+    gap: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: var(--fonte-texto);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--vermelho);
+    transition: gap 0.3s ease;
+}
+
+.ver-mais:hover { gap: 18px; }
+
+.detalhe p {
+    margin-top: 14px;
+    color: var(--creme);
+    font-size: 15px;
+}
+
+/* ===== CARDS DE PERSONAGENS ===== */
+.grade-personagens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card-personagem {
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 18px;
+    border: 1px solid var(--borda);
+    cursor: pointer;
+    text-align: left;
+    color: var(--creme);
+    font-family: var(--fonte-texto);
+    background-color: var(--fundo-card);
+    background-image:
+        linear-gradient(to top, rgba(8, 10, 11, 0.95) 15%, transparent 65%),
+        var(--imagem),
+        linear-gradient(200deg, #2b2f33, var(--fundo-card));
+    background-size: cover;
+    background-position: center top;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-personagem:hover,
+.card-personagem:focus-visible {
+    transform: translateY(-6px);
+    border-color: var(--vermelho);
+    outline: none;
+}
+
+.card-personagem-texto { display: flex; flex-direction: column; }
+.nome { font-size: 17px; font-weight: 700; letter-spacing: 3px; }
+.papel { font-size: 12px; letter-spacing: 2px; color: var(--cinza); }
+.seta { color: var(--vermelho); font-size: 20px; }
+
+.card-personagem.escondido { display: none; }
+
+.sem-resultado { text-align: center; color: var(--cinza); }
+
+/* ===== TITÃS ===== */
+.destaque-titas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.card-tita {
+    margin: 0;
+    min-height: 360px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid var(--borda);
+    background-color: var(--fundo-card);
+    background-image:
+        linear-gradient(to top, rgba(8, 10, 11, 0.95) 10%, transparent 55%),
+        var(--imagem);
+    background-size: cover;
+    background-position: center top;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-tita:hover { transform: translateY(-6px); border-color: var(--vermelho); }
+
+.card-tita figcaption {
+    padding: 22px;
+    font-family: var(--fonte-titulo);
+    font-size: 26px;
+    letter-spacing: 3px;
+}
+
+.card-tita figcaption span {
+    display: block;
+    font-family: var(--fonte-texto);
+    font-size: 13px;
+    color: var(--vermelho);
+    letter-spacing: 4px;
+}
+
+.lista-titas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.lista-titas li {
+    padding: 20px 22px;
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-left: 3px solid var(--vermelho);
+}
+
+.lista-titas strong {
+    display: block;
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--creme);
+    margin-bottom: 4px;
+}
+
+.lista-titas span { color: var(--cinza); }
+
+/* ===== TEMPORADAS ===== */
+.linha-do-tempo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    border-top: 2px solid var(--vermelho-escuro);
+}
+
+.linha-do-tempo li {
+    position: relative;
+    padding-top: 28px;
+}
+
+/* Bolinha vermelha na linha do tempo */
+.linha-do-tempo li::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--vermelho);
+}
+
+.ano { font-family: var(--fonte-titulo); font-size: 26px; color: var(--vermelho); }
+.linha-do-tempo h3 { margin: 4px 0; font-family: var(--fonte-titulo); font-weight: 500; letter-spacing: 1px; }
+.linha-do-tempo p { margin: 0; color: var(--cinza); }
+
+/* ===== GALERIA ===== */
+.grade-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.grade-galeria img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 1px solid var(--borda);
+    background-color: var(--fundo-card);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(40%);
+}
+
+.grade-galeria img:hover { transform: scale(1.03); filter: grayscale(0); }
+
+/* ===== RODAPÉ ===== */
+.rodape {
+    border-top: 1px solid var(--borda);
+    background-color: rgba(8, 10, 11, 0.55); /* semitransparente para deixar o fundo aparecer */
+    padding: 44px 6% 24px;
+}
+
+.rodape-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.logo-rodape { width: 52px; }
+
+.rodape-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+.rodape-links a {
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cinza);
+}
+
+.rodape-links a:hover { color: var(--vermelho); }
+
+.citacao {
+    margin: 0;
+    font-style: italic;
+    font-size: 18px;
+    text-align: right;
+}
+
+.citacao cite { display: block; font-size: 13px; color: var(--cinza); margin-top: 4px; }
+
+.direitos {
+    margin: 32px 0 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--cinza);
+}
+
+/* ===== JANELA DO PERSONAGEM ===== */
+.janela {
+    width: min(720px, 92vw);
+    padding: 0;
+    border: 1px solid var(--vermelho);
+    background-color: var(--fundo-card);
+    color: var(--creme);
+    display: none;
+}
+
+.janela[open] {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+}
+
+.janela::backdrop { background-color: rgba(0, 0, 0, 0.75); }
+
+.janela-imagem {
+    min-height: 320px;
+    background-color: #2b2f33;
+    background-size: cover;
+    background-position: center top;
+}
+
+.janela-texto { padding: 36px 32px; }
+.janela-papel { font-size: 13px; letter-spacing: 3px; color: var(--vermelho); text-transform: uppercase; }
+.janela-nome { font-family: var(--fonte-titulo); font-size: 32px; margin: 6px 0 14px; }
+.janela-descricao { color: var(--cinza); font-size: 17px; margin: 0; }
+
+.fechar {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--creme);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.fechar:hover { color: var(--vermelho); }
+
+/* =========================================================
+   RESPONSIVO: telas médias (tablet)
+   ========================================================= */
+@media (max-width: 1100px) {
+    .navegacao { gap: 22px; }
+    .grade-personagens { grid-template-columns: repeat(2, 1fr); }
+    .lista-titas { grid-template-columns: repeat(2, 1fr); }
+    .linha-do-tempo { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+}
+
+/* =========================================================
+   RESPONSIVO: celular
+   ========================================================= */
+@media (max-width: 860px) {
+    /* No celular o fundo "fixed" costuma falhar, então ele rola junto */
+    body { background-attachment: scroll; background-size: auto 100vh; background-repeat: repeat-y; }
+
+    .cabecalho .marca-texto { display: none; } /* esconde só no cabeçalho; no rodapé continua aparecendo */
+
+    .botao-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        order: 3;
+    }
+
+    .botao-menu span {
+        width: 26px;
+        height: 2px;
+        background-color: var(--creme);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Vira um "X" quando o menu está aberto */
+    .botao-menu[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .botao-menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .botao-menu[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .navegacao {
+        position: absolute;
+        top: var(--altura-cabecalho);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--preto);
+        border-bottom: 2px solid var(--vermelho-escuro);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .navegacao.aberto { max-height: 400px; }
+
+    .navegacao a { padding: 16px 6%; border-top: 1px solid var(--borda); }
+    .navegacao a::after { display: none; }
+    .navegacao a.ativo { color: var(--vermelho); }
+
+    .busca { margin-left: auto; }
+    .busca.aberta input { width: 140px; }
+
+    .banner { padding-bottom: 170px; }
+    .paragrafo { font-size: 14px; letter-spacing: 2px; }
+    .role-para-baixo { display: none; }
+    .caixa { bottom: 40px; }
+
+    .secao { padding: 60px 5%; }
+    .titulo-secao h2::before,
+    .titulo-secao h2::after { width: 30px; }
+
+    .grade-universo,
+    .destaque-titas { grid-template-columns: 1fr; }
+    .card-tita { min-height: 300px; }
+    .card-universo { min-height: 320px; }
+    .grade-galeria { grid-template-columns: repeat(2, 1fr); }
+    /* Com 9 fotos em 2 colunas sobraria um buraco: a primeira ocupa a linha inteira como destaque */
+    .grade-galeria img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
+
+    .rodape-topo { flex-direction: column; text-align: center; }
+    .rodape-links { justify-content: center; }
+    .citacao { text-align: center; }
+
+    .janela[open] { grid-template-columns: 1fr; }
+    .janela-imagem { min-height: 220px; }
+}
+
+@media (max-width: 520px) {
+    .grade-personagens,
+    .lista-titas,
+    .linha-do-tempo { grid-template-columns: 1fr; }
+    .grade-galeria { grid-template-columns: 1fr; }
+    .grade-galeria img:first-child { aspect-ratio: 16 / 10; }
+}
