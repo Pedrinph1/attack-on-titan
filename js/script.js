@@ -108,9 +108,21 @@ function normalizar(texto) {
     return texto.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
 
+const gradePersonagens = document.querySelector('.grade-personagens');
+
 campoBusca.addEventListener('input', function () {
     const termo = normalizar(campoBusca.value.trim());
     let encontrados = 0;
+
+    // Problema antigo: ao esconder cards a página ficava mais curta e "subia" a cada tecla.
+    // Solução: guardar a altura da grade enquanto houver busca, para nada embaixo se mexer.
+    // A página fica parada enquanto a pessoa digita; o Enter leva até os personagens.
+    if (termo && !gradePersonagens.style.minHeight) {
+        gradePersonagens.style.minHeight = gradePersonagens.offsetHeight + 'px';
+    }
+    if (!termo) {
+        gradePersonagens.style.minHeight = '';
+    }
 
     cardsPersonagem.forEach(function (card) {
         const combina = normalizar(card.dataset.nome + ' ' + card.dataset.papel).includes(termo);

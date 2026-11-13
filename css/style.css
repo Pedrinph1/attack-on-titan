@@ -19,7 +19,15 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: var(--altura-cabecalho); }
+/* overflow-anchor: none desliga a "âncora de rolagem" do navegador
+   (ela empurrava a página quando os cards da busca sumiam). */
+html { scroll-behavior: smooth; overflow-anchor: none; }
+
+/* O espaço do cabeçalho fica só nas seções (para os links do menu não pararem
+   atrás dele). Antes estava no html inteiro como "scroll-padding-top": aí o navegador
+   achava que a busca, que fica DENTRO do cabeçalho, estava escondida e rolava a página
+   para cima a cada letra digitada. */
+section[id], [id].secao { scroll-margin-top: var(--altura-cabecalho); }
 
 body {
     font-family: var(--fonte-texto);
